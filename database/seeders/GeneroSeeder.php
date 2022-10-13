@@ -15,7 +15,6 @@ class GeneroSeeder extends Seeder
      */
     public function run()
     {
-
         $generos = [
             ['nome_genero_literario' => 'genero 1'],
             ['nome_genero_literario' => 'genero 2'],

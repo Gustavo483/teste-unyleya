@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Api\EditoraController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,3 +18,14 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+
+
+Route::controller(EditoraController::class)->group(function () {
+    Route::get('/editora', 'index')->name('editora.index');
+    Route::post('/editora', 'store')->name('editora.store');
+    Route::put('/editora/{editora}/{dados}', 'update')->name('editora.update');
+    Route::delete('/editora/{editora}', 'destroy')->name('editora.destroy');
+
+});
+

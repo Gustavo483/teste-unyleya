@@ -1,0 +1,36 @@
+.DivCreate{
+    width: 500px;
+    height: 300px;
+    border-radius: 10px;
+    box-shadow: 10px 10px 5px rgba(213, 228, 255, 1);
+    background: #e3f2fd
+}
+.flex1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 90vh;
+}
+.divBtnEniar{
+    text-align: center;
+}
+
+.BtnEniar{
+    width: 200px;
+    margin-top: 20px;
+    padding: 10px;
+}
+.H4Editora{
+    text-align: center;
+    background: #e3f2fd;
+    padding: 10px;
+    color: white;
+    border-radius: 10px 10px 0 0 ;
+}
+.coldfd{
+    color: red;
+}
+
+
+
