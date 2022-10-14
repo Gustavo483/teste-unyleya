@@ -13,6 +13,7 @@
             <tr>
                 <th scope="col">#</th>
                 <th scope="col">TITULO</th>
+                <th scope="col">ANO LANÇAMENTO</th>
                 <th scope="col">NOME AUTOR</th>
                 <th scope="col">NOME EDITORA</th>
                 <th scope="col">NOME GÊNERO</th>
@@ -27,6 +28,9 @@
                 </td>
                 <td>
                     {{ livro.titulo}}
+                </td>
+                <td>
+                    {{ livro.ano_lancamento}}
                 </td>
                 <td>
                     {{ livro.autores.nome}}
