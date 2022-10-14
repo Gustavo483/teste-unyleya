@@ -9,14 +9,18 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav">
                         <li class="nav-item">
+                            <router-link class="nav-link active" to="/livro">livros</router-link>
+                        </li>
+                        <li class="nav-item">
+                            <router-link class="nav-link active" to="/genero">Generos</router-link>
+                        </li>
+                        <li class="nav-item">
                             <router-link class="nav-link active" to="/autor">Autores</router-link>
                         </li>
                         <li class="nav-item">
                             <router-link class="nav-link active" to="/editora">editora</router-link>
                         </li>
-                        <li class="nav-item">
-                            <router-link class="nav-link active" to="/register">Register</router-link>
-                        </li>
+
                     </ul>
                 </div>
             </div>

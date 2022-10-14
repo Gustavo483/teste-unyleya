@@ -50,7 +50,7 @@ import {onMounted, reactive} from "vue";
 import RegrasAutor from "@/composables/autores";
 
 
-const { cas, getAutor, autor} = RegrasAutor()
+const { getAutor, autor} = RegrasAutor()
 
 
 const props = defineProps({

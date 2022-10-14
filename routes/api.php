@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\EditoraController;
 use App\Http\Controllers\Api\AutorController;
+use App\Http\Controllers\Api\GeneroController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -31,9 +32,15 @@ Route::controller(EditoraController::class)->group(function () {
 Route::controller(AutorController::class)->group(function () {
     Route::get('/autor', 'index')->name('autor.index');
     Route::post('/autor', 'store')->name('autor.store');
-    Route::post('/autor/update/', 'update')->name('update2.store');
-    Route::get('autor/sdsd/{id}', 'show')->name('autor.show');
+    Route::post('/autor/update/', 'update')->name('update.store');
+    Route::get('autor/{id}', 'show')->name('autor.show');
     Route::delete('/autor/{autor}', 'destroy')->name('autor.destroy');
 });
 
-
+Route::controller(GeneroController::class)->group(function () {
+    Route::get('/genero', 'index')->name('genero.index');
+    Route::post('/genero', 'store')->name('genero.store');
+    Route::post('/genero/update/', 'update')->name('genero.store');
+    Route::get('genero/{id}', 'show')->name('genero.show');
+    Route::delete('/genero/{autor}', 'destroy')->name('genero.destroy');
+});
