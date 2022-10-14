@@ -9,7 +9,7 @@ class AutorModel extends Model
 {
     use HasFactory;
     protected $table ='autores';
-    protected $fillable = ['nome','data_nascimento','sexo','nacionalidade'];
+    protected $fillable = ['nome','ano_nascimento','sexo','nacionalidade'];
 
     public function livros()
     {

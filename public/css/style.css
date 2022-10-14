@@ -1,6 +1,6 @@
 .DivCreate{
     width: 500px;
-    height: 300px;
+    min-height: 300px;
     border-radius: 10px;
     box-shadow: 10px 10px 5px rgba(213, 228, 255, 1);
     background: #e3f2fd

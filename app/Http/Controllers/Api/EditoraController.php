@@ -22,11 +22,10 @@ class EditoraController extends Controller
     {
 
         $validacao = [
-            'nome_editora' =>'required|min:5',
+            'nome_editora' =>'required',
         ];
         $feedback =[
             'nome_editora.required'=> 'O campo nome deve ser preenchido',
-
         ];
         $editora = EditoraModel::create($request->validate($validacao, $feedback));
 

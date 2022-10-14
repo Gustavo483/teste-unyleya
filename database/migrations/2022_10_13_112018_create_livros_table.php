@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('titulo');
             $table->string('ano_lancamento');
-            $table->foreignId('fk_autor')->constrained('autores','id');
+            $table->foreignId('fk_autor')->constrained('autores.js','id');
             $table->foreignId('fk_editora')->constrained('editoras','id');
             $table->foreignId('fk_genero')->constrained('generos_literarios','id');
             $table->timestamps();

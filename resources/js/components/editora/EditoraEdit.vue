@@ -7,7 +7,7 @@
                     <h4 class="H4Editora bg-primary">Edição de editora</h4>
 
                     <div>
-                        <label for="name" class="mt-3">Digite o nome da editora:{{form.nome_editora}}</label>
+                        <label for="name" class="mt-3">Digite o nome da editora:</label>
                         <div class="mt-1">
                             <input class="form-control" type="text" name="name" id="name" v-model="form.nome_editora">
                         </div>
@@ -28,28 +28,27 @@
             </form>
         </div>
     </div>
-
 </template>
 
 <script setup>
-import RegrasEditora from "@/composables/editora";
-import {onMounted, reactive} from "vue";
+    import RegrasEditora from "@/composables/editora";
+    import {onMounted, reactive} from "vue";
 
-const { errors, company, getEditora, updateEditora } = RegrasEditora()
+    const { errors, company, getEditora, updateEditora } = RegrasEditora()
 
-const form = reactive({
-    'nome_editora': '',
-})
-const props = defineProps({
-    id: {
-        required: true,
-        type: String
-    },
-})
+    const form = reactive({
+        'nome_editora': '',
+    })
+    const props = defineProps({
+        id: {
+            required: true,
+            type: String
+        },
+    })
 
-onMounted(getEditora(props.id))
+    onMounted(getEditora(props.id))
 
-const saveEditora = async () => {
-    await updateEditora(props, form)
-}
+    const saveEditora = async () => {
+        await updateEditora(props, form)
+    }
 </script>
