@@ -40,9 +40,6 @@ const routes = [
         name: 'Home',
         component: LivroIndex
     },
-
-
-
     {
         path: '/genero',
         name: 'genero.index',
@@ -59,8 +56,6 @@ const routes = [
         component: GeneroEdit,
         props: true
     },
-
-
     {
         path: '/autor',
         name: 'autor.index',
@@ -77,7 +72,6 @@ const routes = [
         component: AutorEdit,
         props: true
     },
-
     {
         path: '/editora',
         name: 'editora.index',
@@ -88,14 +82,12 @@ const routes = [
         name: 'editora.create',
         component: editoraCreate
     },
-
     {
         path: '/editora/:id/edit',
         name: 'editora.edit',
         component: editoraEdit,
         props: true
     },
-
 ];
 
 const router = createRouter({

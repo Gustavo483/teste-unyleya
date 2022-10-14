@@ -19,7 +19,6 @@ export default function RegrasAutor() {
     const getAutor = async (id) => {
         let response = await axios.get('/api/autor/' + id)
         autor.value =response.data;
-        console.log(autor);
     }
 
     const storeAutor = async (data) => {

@@ -1,7 +1,7 @@
 <template>
     <div class="flex1">
         <div class="DivCreate">
-            <form  @submit.prevent="saveAutor">
+            <form @submit.prevent="saveAutor">
                 <div>
 
                     <h4 class="H4Editora bg-primary">Cadastro de autor</h4>
@@ -23,7 +23,8 @@
                     <div>
                         <label for="name" class="mt-3">Digite o ano de nascimento:</label>
                         <div class="mt-1">
-                            <input class="form-control" type="number" name="ano_nascimento" id="ano_nascimento" v-model="form.ano_nascimento">
+                            <input class="form-control" type="number" name="ano_nascimento" id="ano_nascimento"
+                                   v-model="form.ano_nascimento">
                         </div>
                     </div>
 
@@ -37,7 +38,8 @@
                     <div>
                         <label for="name" class="mt-3">Digite a nacionalidade do autor:</label>
                         <div class="mt-1">
-                            <input class="form-control" type="text" name="nacionalidade" id="nacionalidade" v-model="form.nacionalidade">
+                            <input class="form-control" type="text" name="nacionalidade" id="nacionalidade"
+                                   v-model="form.nacionalidade">
                         </div>
                     </div>
                 </div>
@@ -52,17 +54,17 @@
 </template>
 
 <script setup>
-    import { reactive } from "vue";
-    import RegrasAutor from "@/composables/autores";
+import {reactive} from "vue";
+import RegrasAutor from "@/composables/autores";
 
-    const form = reactive({
-        'nome': '',
-        'ano_nascimento': '',
-        'sexo': '',
-        'nacionalidade': '',
-    })
-    const { errors, storeAutor } = RegrasAutor()
-    const saveAutor = async () => {
-        await storeAutor({ ...form });
-    }
+const form = reactive({
+    'nome': '',
+    'ano_nascimento': '',
+    'sexo': '',
+    'nacionalidade': '',
+})
+const {errors, storeAutor} = RegrasAutor()
+const saveAutor = async () => {
+    await storeAutor({...form});
+}
 </script>

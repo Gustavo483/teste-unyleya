@@ -16,16 +16,16 @@ class AutorSeeder extends Seeder
     public function run()
     {
         $autores = [
-            ['nome' => 'nome ficticio 1', 'ano_nascimento' => '1987', 'sexo'=>'masculino','nacionalidade'=>'Brasileira'],
-            ['nome' => 'nome ficticio 2', 'ano_nascimento' => '1987', 'sexo'=>'Feminino','nacionalidade'=>'Brasileira'],
-            ['nome' => 'nome ficticio 3', 'ano_nascimento' => '1987', 'sexo'=>'masculino','nacionalidade'=>'Brasileira'],
-            ['nome' => 'nome ficticio 4', 'ano_nascimento' => '1987', 'sexo'=>'Feminino','nacionalidade'=>'Brasileira'],
-            ['nome' => 'nome ficticio 5', 'ano_nascimento' => '1987', 'sexo'=>'Feminino','nacionalidade'=>'Brasileira'],
-            ['nome' => 'nome ficticio 6', 'ano_nascimento' => '1987', 'sexo'=>'masculino','nacionalidade'=>'Brasileira'],
-            ['nome' => 'nome ficticio 7', 'ano_nascimento' => '1987', 'sexo'=>'masculino','nacionalidade'=>'Brasileira'],
-            ['nome' => 'nome ficticio 8', 'ano_nascimento' => '1987', 'sexo'=>'masculino','nacionalidade'=>'Brasileira'],
-            ['nome' => 'nome ficticio 9', 'ano_nascimento' => '1987', 'sexo'=>'Feminino','nacionalidade'=>'Brasileira'],
-            ['nome' => 'nome ficticio 10', 'ano_nascimento' => '1987', 'sexo'=>'masculino','nacionalidade'=>'Brasileira'],
+            ['nome' => 'nome ficticio um', 'ano_nascimento' => '1987', 'sexo'=>'masculino','nacionalidade'=>'Brasileira'],
+            ['nome' => 'nome ficticio dois', 'ano_nascimento' => '1987', 'sexo'=>'Feminino','nacionalidade'=>'Brasileira'],
+            ['nome' => 'nome ficticio três', 'ano_nascimento' => '1987', 'sexo'=>'masculino','nacionalidade'=>'Brasileira'],
+            ['nome' => 'nome ficticio quatro', 'ano_nascimento' => '1987', 'sexo'=>'Feminino','nacionalidade'=>'Brasileira'],
+            ['nome' => 'nome ficticio cinco', 'ano_nascimento' => '1987', 'sexo'=>'Feminino','nacionalidade'=>'Brasileira'],
+            ['nome' => 'nome ficticio seis', 'ano_nascimento' => '1987', 'sexo'=>'masculino','nacionalidade'=>'Brasileira'],
+            ['nome' => 'nome ficticio sete', 'ano_nascimento' => '1987', 'sexo'=>'masculino','nacionalidade'=>'Brasileira'],
+            ['nome' => 'nome ficticio oito', 'ano_nascimento' => '1987', 'sexo'=>'masculino','nacionalidade'=>'Brasileira'],
+            ['nome' => 'nome ficticio nove', 'ano_nascimento' => '1987', 'sexo'=>'Feminino','nacionalidade'=>'Brasileira'],
+            ['nome' => 'nome ficticio dez', 'ano_nascimento' => '1987', 'sexo'=>'masculino','nacionalidade'=>'Brasileira'],
         ];
         foreach ($autores as $key => $autor) {
             AutorModel::create($autor);

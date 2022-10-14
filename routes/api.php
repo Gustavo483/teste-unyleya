@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\EditoraController;
 use App\Http\Controllers\Api\AutorController;
 use App\Http\Controllers\Api\GeneroController;
+use App\Http\Controllers\Api\LivroController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -25,7 +26,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::controller(EditoraController::class)->group(function () {
     Route::get('/editora', 'index')->name('editora.index');
     Route::post('/editora', 'store')->name('editora.store');
-    Route::put('/editora/{editora}/{dados}', 'update')->name('editora.update');
+    Route::post('/editora/update/', 'update')->name('editora.store');
+    Route::get('editora/{id}', 'show')->name('genero.show');
     Route::delete('/editora/{editora}', 'destroy')->name('editora.destroy');
 });
 
@@ -44,3 +46,14 @@ Route::controller(GeneroController::class)->group(function () {
     Route::get('genero/{id}', 'show')->name('genero.show');
     Route::delete('/genero/{autor}', 'destroy')->name('genero.destroy');
 });
+
+Route::controller(LivroController::class)->group(function () {
+    Route::get('/livro', 'index')->name('livro.index');
+    Route::post('/livro', 'store')->name('livro.store');
+    Route::post('/livro/update/', 'update')->name('livro.store');
+    Route::get('livro/{livro}', 'show')->name('livro.show');
+    Route::delete('/livro/{livro}', 'destroy')->name('livro.destroy');
+
+});
+Route::get('/getDados',[LivroController::class,'getDadosSelect']);
+

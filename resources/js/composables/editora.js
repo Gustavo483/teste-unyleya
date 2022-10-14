@@ -1,24 +1,24 @@
-import { ref } from 'vue'
+import {ref} from 'vue'
 import axios from "axios";
-import { useRouter } from 'vue-router';
+import {useRouter} from 'vue-router';
 
 export default function RegrasEditora() {
     const editora = ref([])
+    const editoras = ref([])
     const companies = ref([])
-    const companies2 = ref([])
     const company = ref([])
     const router = useRouter()
     const errors = ref('')
 
     const getEditoras = async () => {
         let response = await axios.get('/api/editora')
-        companies.value = response.data.data;
-        companies2.value = response.data.data2;
+        editoras.value = response.data.data;
+
     }
 
     const getEditora = async (id) => {
         let response = await axios.get('/api/editora/' + id)
-        company.value = response.data.data;
+        editora.value = response.data;
     }
 
     const storeEditora = async (data) => {
@@ -33,10 +33,11 @@ export default function RegrasEditora() {
         }
     }
 
-    const updateEditora = async (props,form) => {
+    const updateEditora = async (data) => {
         errors.value = ''
         try {
-            await axios.put('/api/editora/' + props.id +'/'+ form.nome_editora)
+            console.log(data)
+            await axios.post('/api/editora/update/', data)
             await router.push({name: 'editora.index'})
         } catch (e) {
             if (e.response.status === 422) {
@@ -51,7 +52,7 @@ export default function RegrasEditora() {
 
     return {
         companies,
-        companies2,
+        editoras,
         company,
         errors,
         editora,

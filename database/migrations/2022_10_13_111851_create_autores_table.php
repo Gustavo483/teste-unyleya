@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('autores.js', function (Blueprint $table) {
+        Schema::create('autores', function (Blueprint $table) {
             $table->id();
             $table->string('nome');
             $table->integer('ano_nascimento');
@@ -30,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('autores.js');
+        Schema::dropIfExists('autores');
     }
 };

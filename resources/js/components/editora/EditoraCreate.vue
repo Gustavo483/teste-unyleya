@@ -1,7 +1,7 @@
 <template>
     <div class="flex1">
         <div class="DivCreate">
-            <form  @submit.prevent="saveEditora">
+            <form @submit.prevent="saveEditora">
                 <div>
 
                     <h4 class="H4Editora bg-primary">Cadastro de editora</h4>
@@ -31,15 +31,15 @@
 </template>
 
 <script setup>
-import { reactive } from "vue";
+import {reactive} from "vue";
 import RegrasEditora from "@/composables/editora";
 
 const form = reactive({
     'nome_editora': '',
 })
-const { errors, storeEditora } = RegrasEditora()
+const {errors, storeEditora} = RegrasEditora()
 const saveEditora = async () => {
-    await storeEditora({ ...form });
+    await storeEditora({...form});
 }
 
 </script>

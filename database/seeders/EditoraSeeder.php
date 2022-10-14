@@ -16,16 +16,11 @@ class EditoraSeeder extends Seeder
     public function run()
     {
         $editoras = [
-            ['nome_editora' => 'editora 1'],
-            ['nome_editora' => 'editora 2'],
-            ['nome_editora' => 'editora 3'],
-            ['nome_editora' => 'editora 4'],
-            ['nome_editora' => 'editora 5'],
-            ['nome_editora' => 'editora 6'],
-            ['nome_editora' => 'editora 7'],
-            ['nome_editora' => 'editora 8'],
-            ['nome_editora' => 'editora 9'],
-            ['nome_editora' => 'editora 10'],
+            ['nome_editora' => 'editora um'],
+            ['nome_editora' => 'editora dois'],
+            ['nome_editora' => 'editora três'],
+            ['nome_editora' => 'editora quatro'],
+            ['nome_editora' => 'editora cinco'],
         ];
         foreach ($editoras as $key => $editora) {
             EditoraModel::create($editora);

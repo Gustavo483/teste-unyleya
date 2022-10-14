@@ -16,16 +16,16 @@ class GeneroSeeder extends Seeder
     public function run()
     {
         $generos = [
-            ['nome_genero_literario' => 'genero 1'],
-            ['nome_genero_literario' => 'genero 2'],
-            ['nome_genero_literario' => 'genero 3'],
-            ['nome_genero_literario' => 'genero 4'],
-            ['nome_genero_literario' => 'genero 5'],
-            ['nome_genero_literario' => 'genero 6'],
-            ['nome_genero_literario' => 'genero 7'],
-            ['nome_genero_literario' => 'genero 8'],
-            ['nome_genero_literario' => 'genero 9'],
-            ['nome_genero_literario' => 'genero 10'],
+            ['nome_genero_literario' => 'genero um'],
+            ['nome_genero_literario' => 'genero dois'],
+            ['nome_genero_literario' => 'genero três'],
+            ['nome_genero_literario' => 'genero quatro'],
+            ['nome_genero_literario' => 'genero cinco'],
+            ['nome_genero_literario' => 'genero seis'],
+            ['nome_genero_literario' => 'genero sete'],
+            ['nome_genero_literario' => 'genero oito'],
+            ['nome_genero_literario' => 'genero nove'],
+            ['nome_genero_literario' => 'genero dez'],
         ];
         foreach ($generos as $key => $genero34) {
             GeneroModel::create($genero34);

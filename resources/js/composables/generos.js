@@ -1,6 +1,6 @@
-import { ref } from 'vue'
+import {ref} from 'vue'
 import axios from "axios";
-import { useRouter } from 'vue-router';
+import {useRouter} from 'vue-router';
 import {value} from "lodash/seq";
 
 export default function RegrasGenero() {
@@ -16,7 +16,7 @@ export default function RegrasGenero() {
 
     const getGenero = async (id) => {
         let response = await axios.get('/api/genero/' + id)
-        genero.value =response.data;
+        genero.value = response.data;
     }
     const storeGenero = async (data) => {
         errors.value = ''

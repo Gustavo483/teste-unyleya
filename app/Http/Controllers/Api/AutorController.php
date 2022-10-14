@@ -11,28 +11,33 @@ use Symfony\Component\HttpFoundation\Response;
 
 class AutorController extends Controller
 {
+    /**
+     * @return \Illuminate\Http\JsonResponse
+     */
     public function index()
     {
-
-        $response = [];
-        $response['data']= AutorModel::all();
-
+        $response['data'] = AutorModel::all();
         return response()->json($response);
-        //return CompanyResource::collection(Company::all());
     }
+
+    /**
+     * @param Request $request
+     * @return \Illuminate\Http\JsonResponse
+     */
     public function store(Request $request)
     {
         $validacao = [
-            'nome' =>'required',
-            'ano_nascimento' =>'required',
-            'sexo' =>'required',
-            'nacionalidade' =>'required',
+            'nome' => 'required',
+            'ano_nascimento' => 'required',
+            'sexo' => 'required',
+            'nacionalidade' => 'required',
         ];
-        $feedback =[
-            'nome.required'=> 'O campo nome deve ser preenchido',
-            'ano_nascimento.required'=> 'O ano de nascimento deve ser preenchido',
-            'sexo.required'=> 'O sexo do autor deve ser preenchido',
-            'nacionalidade.required'=> 'O campo nacionalidade deve ser preenchido',
+
+        $feedback = [
+            'nome.required' => 'O campo nome deve ser preenchido',
+            'ano_nascimento.required' => 'O ano de nascimento deve ser preenchido',
+            'sexo.required' => 'O sexo do autor deve ser preenchido',
+            'nacionalidade.required' => 'O campo nacionalidade deve ser preenchido',
 
         ];
         $editora = AutorModel::create($request->validate($validacao, $feedback));
@@ -41,32 +46,43 @@ class AutorController extends Controller
 
     }
 
+    /**
+     * @param Request $request
+     * @return void
+     */
     public function update(Request $request)
     {
         $validacao = [
-            'nome' =>'required',
-            'ano_nascimento' =>'required',
-            'sexo' =>'required',
-            'nacionalidade' =>'required',
+            'nome' => 'required',
+            'ano_nascimento' => 'required',
+            'sexo' => 'required',
+            'nacionalidade' => 'required',
         ];
-        $feedback =[
-            'nome.required'=> 'O campo nome deve ser preenchido',
-            'ano_nascimento.required'=> 'O ano de nascimento deve ser preenchido',
-            'sexo.required'=> 'O sexo do autor deve ser preenhido',
-            'nacionalidade.required'=> 'O campo nacionalidade deve ser preenchido',
+        $feedback = [
+            'nome.required' => 'O campo nome deve ser preenchido',
+            'ano_nascimento.required' => 'O ano de nascimento deve ser preenchido',
+            'sexo.required' => 'O sexo do autor deve ser preenhido',
+            'nacionalidade.required' => 'O campo nacionalidade deve ser preenchido',
 
         ];
         $request->validate($validacao, $feedback);
-        AutorModel::where('id',$request->id)->update( $request->all());
+        AutorModel::where('id', $request->id)->update($request->all());
     }
 
-
-    public function show( $autor)
+    /**
+     * @param $autor
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function show($autor)
     {
-        $casa = AutorModel::where('id',$autor)->get();
-        return response()->json($casa);
+        $dados = AutorModel::where('id', $autor)->get();
+        return response()->json($dados);
     }
 
+    /**
+     * @param AutorModel $autor
+     * @return \Illuminate\Http\Response
+     */
     public function destroy(AutorModel $autor)
     {
         $autor->delete();
